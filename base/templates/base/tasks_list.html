@@ -1,4 +1,5 @@
 <h1>My Todo List:</h1>
+<a href="{% url 'task-create' %}">Add Task</a>
 
 <table>
     <tr>
@@ -7,6 +8,7 @@
     {% for task in tasks %}
     <tr>
         <td>{{task.title}}</td>
+        <td><a href="{% url 'task' task.id %}">View</a></td>
     </tr>
     {% empty %}
     <h3>No items in the list</h3>
